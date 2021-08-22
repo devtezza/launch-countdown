@@ -13,19 +13,14 @@ html, body {
   padding: 0;
   font-size: 14px;
   box-sizing: border-box;
-}
-
-html {
-  margin: 0;
+  height: 98vh;
   margin: 0 auto;
 }
 
 body {
-  margin: 0 auto;
-  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
-  background-position: center top, center bottom;
+  background-image: url("../images/bg-stars.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: max-width(100%);
 }
 
 header, main {
@@ -34,9 +29,9 @@ header, main {
 
 /*------------------------ HEADER ---------------------------------*/
 header {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   box-sizing: border-box;
-  height: 16rem;
+  height: 35vh;
 }
 header h1 {
   padding-top: 10rem;
@@ -45,14 +40,19 @@ header h1 {
 
 /*------------------------ MAIN ---------------------------------*/
 main {
-  height: 26rem;
+  height: 38vh;
   text-align: center;
 }
 
 /*------------------------ FOOTER ---------------------------------*/
 footer {
-  border: 1px solid red;
-  height: 15rem;
+  background-image: url("../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-color: #1f1726;
+  background-size: cover;
+  background-position: right center;
+  /*border: 1px solid red;*/
+  height: 25vh;
 }
 footer .attribution {
   font-size: 11px;
@@ -60,6 +60,12 @@ footer .attribution {
 }
 footer .attribution a {
   color: #3e52a3;
+}
+
+@media screen and (max-width: 375px) {
+  footer {
+    background-position: 82% center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
