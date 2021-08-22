@@ -12,27 +12,53 @@ html, body {
   min-width: 250px;
   padding: 0;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
 html {
   margin: 0;
-}
-html body {
   margin: 0 auto;
-  background-color: #191a24;
-  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg");
-  background-position: center top, center bottom;
-  background-repeat: no-repeat;
 }
 
-body footer {
-  margin-top: 50rem;
+body {
+  margin: 0 auto;
+  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
+  background-position: center top, center bottom;
+  background-repeat: no-repeat;
+  background-size: max-width(100%);
 }
-body footer .attribution {
+
+header, main {
+  color: white;
+}
+
+/*------------------------ HEADER ---------------------------------*/
+header {
+  border: 1px solid red;
+  box-sizing: border-box;
+  height: 16rem;
+}
+header h1 {
+  padding-top: 10rem;
+  text-align: center;
+}
+
+/*------------------------ MAIN ---------------------------------*/
+main {
+  height: 26rem;
+  text-align: center;
+}
+
+/*------------------------ FOOTER ---------------------------------*/
+footer {
+  border: 1px solid red;
+  height: 15rem;
+}
+footer .attribution {
   font-size: 11px;
   text-align: center;
 }
-body footer .attribution a {
+footer .attribution a {
   color: #3e52a3;
 }
 
