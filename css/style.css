@@ -18,8 +18,8 @@ html, body {
 }
 
 body {
-  background-image: url("../images/bg-stars.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
-  background-position: center top;
+  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
+  background-position: center top, right bottom;
   background-repeat: no-repeat;
 }
 
@@ -46,11 +46,11 @@ main {
 
 /*------------------------ FOOTER ---------------------------------*/
 footer {
-  background-image: url("../images/pattern-hills.svg");
+  /*background-image: 
   background-repeat: no-repeat;
-  background-color: #1f1726;
+  background-color: rgba(31, 23, 38,1);
   background-size: cover;
-  background-position: right center;
+  background-position: right center;*/
   /*border: 1px solid red;*/
   height: 25vh;
 }
@@ -63,8 +63,8 @@ footer .attribution a {
 }
 
 @media screen and (max-width: 375px) {
-  footer {
-    background-position: 82% center;
+  body {
+    background-position: center top, 82% bottom;
   }
 }
 
