@@ -1,4 +1,12 @@
+/*WARNING
+VERIFY CODE BEFORE SUBMITTING CHALLENGE:
+- LINKS
+- PREFIXES
+- ETC
+- DELETE THIS WARNING*/
+
 /*------------------------ GLOBAL STYLES---------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
 
 /*PRIMARY COLORS*/
 /*Grayish blue: */    
@@ -28,50 +36,83 @@ html, body {
 
 }
 
-
 body {
                 
     background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, rgba(30,30,40,1) 0%, rgba(31, 23, 38,1) 80%);
     background-position: center top, right bottom;
     background-repeat: no-repeat;
-    
+    background-size: 100%;
+    font-family: 'Red Hat Text', sans-serif; 
         }
 
-header, main {
-    color: $white;
+img {
+    max-width: 100%;
 }
+
+header, main {
+    color: $white;    
+}
+
+ h1 {
+        padding-top: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        letter-spacing: 0.6rem;
+        /*border: 1px solid red;*/
+    }   
+
+h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        color: $grayish-blue;
+} 
 
 /*------------------------ HEADER ---------------------------------*/
 header {
-    /*border: 1px solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;   
     box-sizing: border-box;
-    height: 35vh;
-    h1 {
-        padding-top: 10rem;
-        text-align: center;
-    }    
+    height: 30vh;
+   
 }
 
 /*------------------------ MAIN ---------------------------------*/
 
 main {
-    height: 38vh;
-    text-align: center;
+    height: 43vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+        div {
+            /*border: 1px solid red;*/
+            padding: 2em;
+        }
+
 }
 
 /*------------------------ FOOTER ---------------------------------*/
-footer {
-    /*background-image: 
-    background-repeat: no-repeat;
-    background-color: rgba(31, 23, 38,1);
-    background-size: cover;
-    background-position: right center;*/
-    /*border: 1px solid red;*/
+footer {    
     height: 25vh;
-    .attribution { 
+    .social-icons {
+        height: 16vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        a {
+            display: inline-block;
+            padding: 1rem;
+        }
+    }
+    .attribution {
+        padding-top: 4rem; 
         font-size: 11px; text-align: center;
         a {
-        color: hsl(228, 45%, 44%); 
+            color: hsl(228, 45%, 44%);            
         } 
     }   
 }

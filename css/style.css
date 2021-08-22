@@ -1,4 +1,11 @@
+/*WARNING
+VERIFY CODE BEFORE SUBMITTING CHALLENGE:
+- LINKS
+- PREFIXES
+- ETC
+- DELETE THIS WARNING*/
 /*------------------------ GLOBAL STYLES---------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap");
 /*PRIMARY COLORS*/
 /*Grayish blue: */
 /*Soft red: */
@@ -21,40 +28,73 @@ body {
   background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
   background-position: center top, right bottom;
   background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+img {
+  max-width: 100%;
 }
 
 header, main {
   color: white;
 }
 
+h1 {
+  padding-top: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.6rem;
+  /*border: 1px solid red;*/
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+  color: #8486a9;
+}
+
 /*------------------------ HEADER ---------------------------------*/
 header {
-  /*border: 1px solid red;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  height: 35vh;
-}
-header h1 {
-  padding-top: 10rem;
-  text-align: center;
+  height: 30vh;
 }
 
 /*------------------------ MAIN ---------------------------------*/
 main {
-  height: 38vh;
-  text-align: center;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+main div {
+  /*border: 1px solid red;*/
+  padding: 2em;
 }
 
 /*------------------------ FOOTER ---------------------------------*/
 footer {
-  /*background-image: 
-  background-repeat: no-repeat;
-  background-color: rgba(31, 23, 38,1);
-  background-size: cover;
-  background-position: right center;*/
-  /*border: 1px solid red;*/
   height: 25vh;
 }
+footer .social-icons {
+  height: 16vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+footer .social-icons a {
+  display: inline-block;
+  padding: 1rem;
+}
 footer .attribution {
+  padding-top: 4rem;
   font-size: 11px;
   text-align: center;
 }
