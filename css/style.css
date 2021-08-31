@@ -20,7 +20,7 @@ html, body {
   padding: 0;
   font-size: 14px;
   box-sizing: border-box;
-  height: 98vh;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -72,11 +72,17 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
-}
-main div {
   /*border: 1px solid red;*/
-  padding: 2em;
+}
+main .time-label {
+  /*border: 1px solid red;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .time-label > div {
+  /*border: 1px solid white;*/
+  padding: 0 2rem;
 }
 
 /*------------------------ FOOTER ---------------------------------*/
