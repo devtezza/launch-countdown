@@ -39,7 +39,7 @@ html, body {
 body {
                 
     background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, rgba(30,30,40,1) 0%, rgba(31, 23, 38,1) 80%);
-    background-position: center top, right bottom;
+    background-position: left top, right bottom;
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: 'Red Hat Text', sans-serif; 
@@ -76,7 +76,7 @@ header {
     align-items: center;
     justify-content: center;   
     box-sizing: border-box;
-    height: 30vh;
+    height: 32vh;
    
 }
 
@@ -85,13 +85,14 @@ header {
 main {
     height: 43vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;   
     
-    border: 1px solid red;
+    /*border: 1px solid red;*/
         .flip-time-container {
         /*border: 1px solid red;*/
+
         display: flex;
         justify-content: center;
         align-items:  center;
@@ -233,6 +234,7 @@ main {
 
         .number:before,
         .card-face-back {
+            /*border: 1px solid yellow;*/
             /*border-top: 0.1px outset $mostly-black-blue;*/
             /*border-top: 0.01px outset green;*/
             background: $dark-desat-blue;
@@ -248,18 +250,20 @@ main {
             border-top-right-radius: 0;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
+            /*box-shadow: 0 -50px 50px -25px hsla(235, 16%, 14%, 0.5) inset;*/
+            
         }
 
 
         .number:after,
         .card-face-front {
-            /*border-bottom: 0.01px inset $mostly-black-blue;*/
+            /*border: 1px solid red;*/
             background: $dark-desat-blue;
             background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 6px, $dark-desat-blue 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 6px, $dark-desat-blue 0) bottom right,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) top left,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) top right;
+                radial-gradient(circle at bottom left, $mostly-black-blue 6px, hsla(236, 25%, 23%,1) 0) bottom left,
+                radial-gradient(circle at bottom right, $mostly-black-blue 6px, hsla(236, 25%, 23%, 1) 0) bottom right,
+                linear-gradient(45deg, hsla(236, 25%, 23%, 1) 20px, hsla(236, 25%, 23%, 1) 0) top left,
+                linear-gradient(45deg, hsla(236, 25%, 23%, 1) 20px, hsla(236, 25%, 23%, 1) 0) top right;
 
             background-size: 50% 50%;
             background-repeat: no-repeat;
@@ -267,6 +271,9 @@ main {
             border-top-right-radius: 0;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            /*box-shadow: 0 -60px 70px  hsla(235, 16%, 14%, 0.4) inset;*/
+            /*box-shadow: 0 5rem hsla(236, 25%, 18%, 0.3) inset;*/
+            
         }
 
 
