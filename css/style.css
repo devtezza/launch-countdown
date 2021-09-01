@@ -72,17 +72,177 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*border: 1px solid red;*/
+  flex-direction: column;
+  border: 1px solid red;
 }
-main .time-label {
+main .flip-time-container {
   /*border: 1px solid red;*/
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 0;
+  /*box-shadow: rgba(0,0,0,0.8) 0 1px 0px 0px;*/
+}
+main .flip-time-container * {
+  user-select: none;
+  cursor: default;
+}
+main .flip-time {
+  display: flex;
+  perspective: 500px;
+  margin: 0 1.4rem;
+  /*border: 1px solid green;*/
+}
+main .number {
+  position: relative;
+  width: 10.5rem;
+  height: 10rem;
+  /*box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);*/
+  /*border: 1px solid black;*/
+}
+main .number:before, main .number:after {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+main .number:before {
+  /*border: 1px solid green;*/
+  content: attr(data-number-before);
+  bottom: 0;
+  align-items: flex-start;
+}
+main .number:after {
+  /*border: 1px solid white;*/
+  content: attr(data-number-after);
+  top: 0;
+  align-items: flex-end;
+}
+main .rounded-box {
+  /*border: 1px solid white;*/
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #191a24;
+  opacity: 1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: -2;
+}
+main .card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transform: rotateX(0);
+  transition: transform 0.7s ease-in-out;
+}
+main .card.flipped {
+  transform: rotateX(-180deg);
+}
+main .card-face {
+  /*border: 1px solid yellow;*/
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+main .card-face-front {
+  /*border: 1px solid red;*/
+  /*background: red;
+  color: white;*/
+  align-items: flex-end;
+}
+main .card-face-back {
+  /*border: 1px solid red;*/
+  /*background: blue;
+  color: white;*/
+  align-items: flex-start;
+  transform: rotateX(-180deg);
+}
+main .number:before,
+main .number:after,
+main .card-face-front,
+main .card-face-back {
+  background: #343650;
+  color: #fb6087;
+}
+main .number:before,
+main .card-face-back {
+  /*border-top: 0.1px outset $mostly-black-blue;*/
+  /*border-top: 0.01px outset green;*/
+  background: #343650;
+  background: radial-gradient(circle at top left, #191a24 6px, #343650 0), radial-gradient(circle at top right, #191a24 6px, #343650 0) top right, linear-gradient(45deg, #343650 20px, #343650 0) bottom left, linear-gradient(45deg, #343650 20px, #343650 0) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+main .number:after,
+main .card-face-front {
+  /*border-bottom: 0.01px inset $mostly-black-blue;*/
+  background: #343650;
+  background: radial-gradient(circle at bottom left, #191a24 6px, #343650 0) bottom left, radial-gradient(circle at bottom right, #191a24 6px, #343650 0) bottom right, linear-gradient(45deg, #343650 20px, #343650 0) top left, linear-gradient(45deg, #343650 20px, #343650 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+main .flip-time:before {
+  content: "";
+  position: absolute;
+  height: 0.9px;
+  width: 9.5rem;
+  background: black;
+  left: 7px;
+  top: 49%;
+  z-index: 2;
+  opacity: 0.2;
+  box-shadow: 0 -0.1px 1px 0.1px black;
+}
+main .flip-time:after {
+  /*border: 1px solid red;*/
+  content: "";
+  position: absolute;
+  height: 0.1px;
+  width: 9rem;
+  background: inherit;
+  top: 49%;
+  left: 9.5px;
+  z-index: 2;
+  opacity: 0.3;
+  box-shadow: 0 1.5px 2px 0.4px rgba(132, 134, 169, 0.5);
+}
+main .time-label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 53.2rem;
+  margin-top: 1rem;
+  /*border: 1px solid red;            */
 }
 main .time-label > div {
+  width: 9.5rem;
+  text-align: center;
   /*border: 1px solid white;*/
-  padding: 0 2rem;
+  /*margin: 0 1.5rem;  */
 }
 
 /*------------------------ FOOTER ---------------------------------*/
