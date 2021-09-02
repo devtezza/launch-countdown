@@ -53,7 +53,7 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 1rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.4rem;
   color: #8486a9;
 }
 
@@ -199,7 +199,7 @@ main .number:after,
 main .card-face-front {
   /*border: 1px solid red;*/
   background: #343650;
-  background: radial-gradient(circle at bottom left, #191a24 6px, #2c2e49 0) bottom left, radial-gradient(circle at bottom right, #191a24 6px, #2c2e49 0) bottom right, linear-gradient(45deg, #2c2e49 20px, #2c2e49 0) top left, linear-gradient(45deg, #2c2e49 20px, #2c2e49 0) top right;
+  background: radial-gradient(circle at bottom left, #191a24 6px, #30324b 0) bottom left, radial-gradient(circle at bottom right, #191a24 6px, #30324b 0) bottom right, linear-gradient(45deg, #30324b 20px, #30324b 0) top left, linear-gradient(45deg, #30324b 20px, #30324b 0) top right;
   background-size: 50% 50%;
   background-repeat: no-repeat;
   border-top-left-radius: 0;
@@ -212,49 +212,52 @@ main .card-face-front {
 main .flip-time:before {
   content: "";
   position: absolute;
-  height: 0.9px;
+  height: 0.1px;
   width: 9.5rem;
   background: black;
   left: 7px;
   top: 49%;
   z-index: 2;
-  opacity: 0.2;
+  opacity: 0.1;
   box-shadow: 0 -0.1px 1px 0.1px black;
 }
 main .flip-time:after {
   /*border: 1px solid red;*/
   content: "";
   position: absolute;
-  height: 0.1px;
+  height: 0.3px;
   width: 9rem;
   background: inherit;
   top: 49%;
   left: 9.5px;
   z-index: 2;
-  opacity: 0.3;
-  box-shadow: 0 1.5px 2px 0.4px rgba(132, 134, 169, 0.5);
+  opacity: 0.2;
+  box-shadow: 0 1px 2.5px 0.1px #8486a9;
 }
 main .time-label {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 53.2rem;
   margin-top: 1rem;
-  /*border: 1px solid red;            */
+  /*border: 1px solid red;*/
 }
 main .time-label > div {
-  width: 9.5rem;
+  width: 10.5rem;
   text-align: center;
   /*border: 1px solid white;*/
-  /*margin: 0 1.5rem;  */
+  margin: 0 1.4rem;
 }
 
 /*------------------------ FOOTER ---------------------------------*/
 footer {
   height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 footer .social-icons {
-  height: 16vh;
+  /*margin-top: 10rem;*/
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -264,18 +267,274 @@ footer .social-icons a {
   padding: 1rem;
 }
 footer .attribution {
-  padding-top: 4rem;
-  font-size: 11px;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 footer .attribution a {
+  margin: 0 0.5rem;
   color: #3e52a3;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 375px) {
+/*BREAKING POINTS*/
+/*-------------------------MID SIZED SCREENS 750 PX-------------------------*/
+@media screen and (max-width: 750px) {
+  html, body {
+    font-size: 9px;
+  }
+
   body {
-    background-position: center top, 82% bottom;
+    background-position: center top, center bottom;
+    background-size: 200%, 150%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 1.2rem;
+    margin-bottom: 8.5rem;
+  }
+
+  header {
+    height: 37vh;
+    align-items: flex-end;
+  }
+
+  main {
+    height: 30vh;
+  }
+  main .flip-time-container {
+    /*border: 1px solid green;*/
+    font-size: 5rem;
+  }
+  main .flip-time {
+    margin: 0 0.7rem;
+  }
+  main .number {
+    width: 9.5rem;
+    height: 9rem;
+  }
+  main .number:before,
+main .card-face-back {
+    /*border: 1px solid yellow;*/
+    /*border-top: 0.1px outset $mostly-black-blue;*/
+    /*border-top: 0.01px outset green;*/
+    background: #343650;
+    background: radial-gradient(circle at top left, #191a24 3.5px, #343650 0), radial-gradient(circle at top right, #191a24 3.5px, #343650 0) top right, linear-gradient(45deg, #343650 20px, #343650 0) bottom left, linear-gradient(45deg, #343650 20px, #343650 0) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  main .number:after,
+main .card-face-front {
+    /*border: 1px solid red;*/
+    background: #343650;
+    background: radial-gradient(circle at bottom left, #191a24 3.5px, #30324b 0) bottom left, radial-gradient(circle at bottom right, #191a24 3.5px, #30324b 0) bottom right, linear-gradient(45deg, #30324b 20px, #30324b 0) top left, linear-gradient(45deg, #30324b 20px, #30324b 0) top right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  main .time-label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 43.6rem;
+    margin-top: 1rem;
+    /*border: 1px solid red;*/
+  }
+  main .time-label > div {
+    width: 9.5rem;
+    text-align: center;
+    /*border: 1px solid white;*/
+    /*margin: 0 1.5rem;  */
+  }
+
+  footer {
+    height: 33vh;
+    align-items: center;
+  }
+  footer .social-icons {
+    margin: 20rem 0 2rem 0;
+    /*border: 1px solid red;*/
+  }
+  footer .social-icons a {
+    margin: 0 1rem;
+  }
+  footer .attribution {
+    font-size: 1.2rem;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    /*border: 1px solid white;*/
   }
 }
+/*--------------------- END MID SIZED SCREENS 750 PX---------------------*/
+/*----------------------------MOBILE 1 375 PX--------------------------------*/
+@media screen and (max-width: 375px) {
+  html, body {
+    font-size: 7px;
+  }
+
+  body {
+    background-position: center top, 85% bottom;
+    background-size: 200%, 320%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1.2rem;
+    margin-bottom: 8.5rem;
+  }
+
+  header {
+    height: 37vh;
+    align-items: flex-end;
+  }
+
+  main {
+    height: 30vh;
+  }
+  main .flip-time-container {
+    font-size: 5rem;
+    /*border: 1px solid green;*/
+  }
+  main .flip-time {
+    margin: 0 1rem;
+  }
+  main .number {
+    width: 10rem;
+    height: 9.5rem;
+  }
+  main .number:before,
+main .card-face-back {
+    /*border: 1px solid yellow;*/
+    /*border-top: 0.1px outset $mostly-black-blue;*/
+    /*border-top: 0.01px outset green;*/
+    background: #343650;
+    background: radial-gradient(circle at top left, #191a24 3.5px, #343650 0), radial-gradient(circle at top right, #191a24 3.5px, #343650 0) top right, linear-gradient(45deg, #343650 20px, #343650 0) bottom left, linear-gradient(45deg, #343650 20px, #343650 0) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  main .number:after,
+main .card-face-front {
+    /*border: 1px solid red;*/
+    background: #343650;
+    background: radial-gradient(circle at bottom left, #191a24 3.5px, #30324b 0) bottom left, radial-gradient(circle at bottom right, #191a24 3.5px, #30324b 0) bottom right, linear-gradient(45deg, #30324b 20px, #30324b 0) top left, linear-gradient(45deg, #30324b 20px, #30324b 0) top right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  main .time-label {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 48rem;
+    margin-top: 1rem;
+    /*border: 1px solid red;            */
+  }
+  main .time-label > div {
+    width: 9rem;
+    text-align: center;
+    /*border: 1px solid white;*/
+    /*margin: 0 1.5rem;  */
+  }
+
+  footer {
+    height: 33vh;
+    align-items: center;
+  }
+  footer .social-icons {
+    margin: 20rem 0 2rem 0;
+    /*border: 1px solid red;*/
+  }
+  footer .social-icons a {
+    margin: 0 1rem;
+  }
+  footer .attribution {
+    font-size: 1.2rem;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    /*border: 1px solid white;*/
+  }
+}
+/*------------------------- END MOBILE 1 375 PX -----------------------------*/
+/*----------------------------MOBILE 2 330 PX--------------------------------*/
+@media screen and (max-width: 330px) {
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1.2rem;
+    margin-bottom: 10.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  header {
+    height: 37vh;
+    align-items: flex-end;
+  }
+
+  main {
+    height: 30vh;
+  }
+  main .flip-time-container {
+    font-size: 3rem;
+  }
+  main .flip-time {
+    margin: 0 0.5rem;
+  }
+  main .number {
+    width: 7.5rem;
+    height: 7rem;
+  }
+  main .number:before,
+main .card-face-back {
+    background: #343650;
+    background: radial-gradient(circle at top left, #191a24 1.5px, #343650 0), radial-gradient(circle at top right, #191a24 1.5px, #343650 0) top right, linear-gradient(45deg, #343650 20px, #343650 0) bottom left, linear-gradient(45deg, #343650 20px, #343650 0) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  main .number:after,
+main .card-face-front {
+    background: #343650;
+    background: radial-gradient(circle at bottom left, #191a24 1.5px, #30324b 0) bottom left, radial-gradient(circle at bottom right, #191a24 1.5px, #30324b 0) bottom right, linear-gradient(45deg, #30324b 20px, #30324b 0) top left, linear-gradient(45deg, #30324b 20px, #30324b 0) top right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+  main .time-label {
+    width: 36rem;
+    margin-top: 1rem;
+    justify-content: space-evenly;
+  }
+  main .time-label > div {
+    width: 7rem;
+  }
+}
+/*------------------------- END MOBILE 2 330 PX -----------------------------*/
 
 /*# sourceMappingURL=style.css.map */
