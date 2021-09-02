@@ -1,10 +1,3 @@
-/*WARNING
-VERIFY CODE BEFORE SUBMITTING CHALLENGE:
-- LINKS
-- PREFIXES
-- ETC
-- DELETE THIS WARNING*/
-
 /*------------------------ GLOBAL STYLES---------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
 
@@ -19,11 +12,16 @@ $soft-red: hsl(345, 95%, 68%);
 $white: hsl(0, 0%, 100%);
 /*Dark desaturated blue: */
 $dark-desat-blue: hsl(236, 21%, 26%);
+/*Dark desaturated blue 2: */
+$dark-desat-blue-2: hsl(236, 22%, 24%);
 /*Very dark blue: */
 $very-dark-blue: hsl(235, 16%, 14%);
 /*Very dark (mostly black) blue: */
 $mostly-black-blue: hsl(234, 17%, 12%);
-
+/*Background gradient 1: */
+$back-gradient-1: hsl(224, 20%, 15%);
+/*Background gradient 2: */
+$back-gradient-2: hsl(264, 23%, 13%);
 
 html, body {  
     max-width: 1440px;
@@ -38,7 +36,7 @@ html, body {
 
 body {
                 
-    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, rgba(30,34,45,1) 0%, rgba(31, 25, 40,1) 80%);
+    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, $back-gradient-1 0%, $back-gradient-2 80%);
     background-position: left top, right bottom;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -58,8 +56,7 @@ header, main {
         text-align: center;
         text-transform: uppercase;
         font-size: 1.5rem;
-        letter-spacing: 0.6rem;
-        /*border: 1px solid red;*/
+        letter-spacing: 0.6rem;        
     }   
 
 h2 {
@@ -76,8 +73,7 @@ header {
     align-items: center;
     justify-content: center;   
     box-sizing: border-box;
-    height: 32vh;
-   
+    height: 32vh;   
 }
 
 /*------------------------ MAIN ---------------------------------*/
@@ -89,9 +85,8 @@ main {
     align-items: center;
     flex-direction: column;   
     
-    /*border: 1px solid red;*/
-        .flip-time-container {
-        /*border: 1px solid red;*/
+    
+        .flip-time-container {        
 
         display: flex;
         justify-content: center;
@@ -101,10 +96,7 @@ main {
         font-size: 5.5rem;
         font-weight: 700; 
         line-height: 0;
-        
-        
-        /*box-shadow: rgba(0,0,0,0.8) 0 1px 0px 0px;*/
-    }
+        }
 
         .flip-time-container * {
             user-select: none;
@@ -114,17 +106,13 @@ main {
         .flip-time {
             display: flex;
             perspective: 500px;
-            margin: 0 1.4rem;
-            /*border: 1px solid green;*/
+            margin: 0 1.4rem;            
         }
 
         .number {
             position: relative;
             width: 10.5rem;
             height: 10rem;
-
-            /*box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);*/
-            /*border: 1px solid black;*/
         }
 
         .number:before, .number:after {
@@ -140,16 +128,14 @@ main {
             overflow: hidden; 
         }
 
-        .number:before {
-            /*border: 1px solid green;*/
+        .number:before {           
             content: attr(data-number-before);
             
             bottom: 0;
             align-items: flex-start;
         }
 
-        .number:after {
-            /*border: 1px solid white;*/
+        .number:after {            
             content: attr(data-number-after); 
 
             top: 0;
@@ -157,8 +143,7 @@ main {
         }
 
 
-        .rounded-box {
-            /*border: 1px solid white;*/
+        .card-shadow {            
             position: absolute;
             bottom: -10px;
             left: 0;    
@@ -191,8 +176,7 @@ main {
 
 
 
-        .card-face {
-            /*border: 1px solid yellow;*/
+        .card-face {            
             position: absolute;
 
             display: flex;
@@ -205,20 +189,11 @@ main {
             backface-visibility: hidden;
         }
 
-        .card-face-front {
-            /*border: 1px solid red;*/
-            /*background: red;
-            color: white;*/
+        .card-face-front {           
             align-items: flex-end;
-
-            
         }
 
         .card-face-back {
-            /*border: 1px solid red;*/
-            /*background: blue;
-            color: white;*/
-
             align-items: flex-start;
             
             transform: rotateX(-180deg);
@@ -229,14 +204,11 @@ main {
         .card-face-front,
         .card-face-back {
             background: $dark-desat-blue;
-            color: hsl(345, 95%, 68%);
+            color: $soft-red;
         }
 
         .number:before,
         .card-face-back {
-            /*border: 1px solid yellow;*/
-            /*border-top: 0.1px outset $mostly-black-blue;*/
-            /*border-top: 0.01px outset green;*/
             background: $dark-desat-blue;
             background: 
                 radial-gradient(circle at top left, $mostly-black-blue 6px, $dark-desat-blue 0),
@@ -249,31 +221,25 @@ main {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            /*box-shadow: 0 -50px 50px -25px hsla(235, 16%, 14%, 0.5) inset;*/
-            
+            border-bottom-right-radius: 10px; 
         }
 
 
         .number:after,
         .card-face-front {
-            /*border: 1px solid red;*/
             background: $dark-desat-blue;
             background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 6px, hsla(236, 22%, 24%,1) 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 6px, hsla(236, 22%, 24%, 1) 0) bottom right,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top left,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top right;
+                radial-gradient(circle at bottom left, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom left,
+                radial-gradient(circle at bottom right, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom right,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
 
             background-size: 50% 50%;
             background-repeat: no-repeat;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            /*box-shadow: 0 -60px 70px  hsla(235, 16%, 14%, 0.4) inset;*/
-            /*box-shadow: 0 5rem hsla(236, 25%, 18%, 0.3) inset;*/
-            
+            border-top-right-radius: 10px;  
         }
 
 
@@ -290,8 +256,7 @@ main {
             box-shadow: 0 -0.1px 1px 0.1px black;
         }
 
-        .flip-time:after{
-            /*border: 1px solid red;*/
+        .flip-time:after{            
             content: "";
             position: absolute;
             height: 0.3px;
@@ -302,23 +267,21 @@ main {
             z-index: 2;
             opacity: 0.2;
             
-            box-shadow: 0 1px 2.5px 0.1px hsla(237, 18%, 59%, 1);
+            box-shadow: 0 1px 2.5px 0.1px $grayish-blue;
         }
 
 
 
-        .time-label {
+        .flip-time-label {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 53.2rem;
-            margin-top: 1rem;
-            /*border: 1px solid red;*/
+            margin-top: 1rem;            
             
             & > div {
                 width: 10.5rem;
-                text-align: center;
-                /*border: 1px solid white;*/
+                text-align: center;                
                 margin: 0 1.4rem;  
             }
         }
@@ -332,7 +295,6 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     .social-icons {
-        /*margin-top: 10rem;*/
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -355,10 +317,8 @@ footer {
         }
 
         a {
-            /*border: 1px solid red;*/
             margin: 0 0.5rem;
             color: $grayish-blue;
-            /*color: hsl(228, 45%, 44%);*/
             text-decoration: none;
             &:hover {
                color: $soft-red;
@@ -395,12 +355,12 @@ footer {
     main {
         height: 30vh;
         .flip-time-container {
-            /*border: 1px solid green;*/
             font-size: 5rem;
         }
 
         .flip-time {
             margin: 0 0.7rem;
+            perspective: 250px;
         }
 
         .number {
@@ -408,15 +368,11 @@ footer {
             height: 9rem;
         }
 
-        .rounded-box {
-            /*border: 1px solid white;*/
+        .card-shadow {           
             position: absolute;
             bottom: -5px;
-            /*left: 0;    */
             width: 100%;
             height: 15px;
-            /*background: $mostly-black-blue;*/
-            /*background: green;*/
             opacity: 1;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -425,9 +381,6 @@ footer {
 
         .number:before,
         .card-face-back {
-            /*border: 1px solid yellow;*/
-            /*border-top: 0.1px outset $mostly-black-blue;*/
-            /*border-top: 0.01px outset green;*/
             background: $dark-desat-blue;
             background: 
                 radial-gradient(circle at top left, $mostly-black-blue 3.5px, $dark-desat-blue 0),
@@ -448,13 +401,12 @@ footer {
 
         .number:after,
         .card-face-front {
-            /*border: 1px solid red;*/
             background: $dark-desat-blue;
             background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, hsla(236, 22%, 24%,1) 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, hsla(236, 22%, 24%, 1) 0) bottom right,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top left,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top right;
+                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom left,
+                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
 
             background-size: 50% 50%;
             background-repeat: no-repeat;
@@ -466,20 +418,17 @@ footer {
             
         }
 
-        .time-label {
+        .flip-time-label {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 43.6rem;
-            margin-top: 1rem;
-            /*border: 1px solid red;*/
+            margin-top: 1rem;            
             
             & > div {
                 width: 9.5rem;
                 text-align: center;
                 margin: 0 0.7;
-                /*border: 1px solid white;*/
-                /*margin: 0 1.5rem;  */
             }
         }
 
@@ -502,7 +451,6 @@ footer {
 
         .social-icons {
             margin: 20rem 0 2rem 0;
-            /*border: 1px solid red;*/
             a {
                 margin: 0 1rem;
             }
@@ -513,13 +461,12 @@ footer {
             padding-top: 0;
             margin-top: 0;
             margin-bottom: 1rem;
-
-            /*border: 1px solid white;*/
        }
         
     }
 }
 /*--------------------- END MID SIZED SCREENS 750 PX---------------------*/
+
 
 /*----------------------------MOBILE 1 375 PX--------------------------------*/
 
@@ -548,11 +495,11 @@ footer {
         height: 30vh;
         .flip-time-container {
             font-size: 5rem;
-            /*border: 1px solid green;*/
         }
 
         .flip-time {
             margin: 0 1rem;
+            perspective: 150px;
         }
 
         .number {
@@ -560,15 +507,11 @@ footer {
             height: 9.5rem;
         }
 
-       .rounded-box {
-            /*border: 1px solid white;*/
+       .card-shadow {
             position: absolute;
             bottom: -4px;
-            /*left: 0;    */
             width: 100%;
             height: 15px;
-            /*background: $mostly-black-blue;*/
-            /*background: green;*/
             opacity: 1;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -577,9 +520,6 @@ footer {
 
         .number:before,
         .card-face-back {
-            /*border: 1px solid yellow;*/
-            /*border-top: 0.1px outset $mostly-black-blue;*/
-            /*border-top: 0.01px outset green;*/
             background: $dark-desat-blue;
             background: 
                 radial-gradient(circle at top left, $mostly-black-blue 3.5px, $dark-desat-blue 0),
@@ -598,13 +538,12 @@ footer {
 
         .number:after,
         .card-face-front {
-            /*border: 1px solid red;*/
             background: $dark-desat-blue;
             background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, hsla(236, 22%, 24%,1) 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, hsla(236, 22%, 24%, 1) 0) bottom right,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top left,
-                linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top right;
+                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom left,
+                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
+                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
 
             background-size: 50% 50%;
             background-repeat: no-repeat;
@@ -614,7 +553,7 @@ footer {
             border-top-right-radius: 5px;
         }
 
-        .time-label {
+        .flip-time-label {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -626,8 +565,6 @@ footer {
                 width: 10rem;
                 text-align: center;
                 margin: 0 1rem;
-                /*border: 1px solid white;*/
-                /*margin: 0 1.5rem;  */
             }
         }
 
@@ -649,7 +586,6 @@ footer {
 
         .social-icons {
             margin: 20rem 0 2rem 0;
-            /*border: 1px solid red;*/
             a {
                 margin: 0 1rem;
             }
@@ -660,8 +596,6 @@ footer {
             padding-top: 0;
             margin-top: 0;
             margin-bottom: 1rem;
-
-            /*border: 1px solid white;*/
        }
         
     }
@@ -705,15 +639,11 @@ footer {
                 height: 7rem;
             }
 
-            .rounded-box {
-            /*border: 1px solid white;*/
+            .card-shadow {
                 position: absolute;
                 bottom: -3px;
-                /*left: 0;    */
                 width: 100%;
                 height: 10px;
-                /*background: $mostly-black-blue;*/
-                /*background: green;*/
                 opacity: 1;
                 border-bottom-left-radius: 2px;
                 border-bottom-right-radius: 2px;
@@ -742,10 +672,10 @@ footer {
             .card-face-front {                
                 background: $dark-desat-blue;
                 background: 
-                    radial-gradient(circle at bottom left, $mostly-black-blue 1.5px, hsla(236, 22%, 24%,1) 0) bottom left,
-                    radial-gradient(circle at bottom right, $mostly-black-blue 1.5px, hsla(236, 22%, 24%, 1) 0) bottom right,
-                    linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top left,
-                    linear-gradient(45deg, hsla(236, 22%, 24%, 1) 20px, hsla(236, 22%, 24%, 1) 0) top right;
+                    radial-gradient(circle at bottom left, $mostly-black-blue 1.5px, $dark-desat-blue-2 0) bottom left,
+                    radial-gradient(circle at bottom right, $mostly-black-blue 1.5px, $dark-desat-blue-2 0) bottom right,
+                    linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
+                    linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
 
                 background-size: 50% 50%;
                 background-repeat: no-repeat;
@@ -755,7 +685,7 @@ footer {
                 border-top-right-radius: 2px; 
             }
 
-            .time-label {           
+            .flip-time-label {           
                 width: 34rem;
                 margin-top: 1rem;
                 justify-content: center;            
