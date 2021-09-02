@@ -25,7 +25,7 @@ html, body {
 }
 
 body {
-  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e1e28 0%, #1f1726 80%);
+  background-image: url("../images/bg-stars.svg"), url("../images/pattern-hills.svg"), linear-gradient(to bottom, #1e222d 0%, #1f1928 80%);
   background-position: left top, right bottom;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -263,19 +263,32 @@ footer .social-icons {
   align-items: flex-end;
 }
 footer .social-icons a {
+  filter: invert(63%) sepia(10%) saturate(866%) hue-rotate(199deg) brightness(83%) contrast(93%);
   display: inline-block;
   padding: 1rem;
+}
+footer .social-icons a:hover {
+  filter: invert(73%) sepia(52%) saturate(5923%) hue-rotate(309deg) brightness(98%) contrast(101%);
 }
 footer .attribution {
   padding-top: 2rem;
   margin-bottom: 1rem;
   font-size: 0.7rem;
   text-align: center;
+  color: white;
+}
+footer .attribution span {
+  margin-left: 1rem;
 }
 footer .attribution a {
+  /*border: 1px solid red;*/
   margin: 0 0.5rem;
-  color: #3e52a3;
+  color: #8486a9;
+  /*color: hsl(228, 45%, 44%);*/
   text-decoration: none;
+}
+footer .attribution a:hover {
+  color: #fb6087;
 }
 
 /*BREAKING POINTS*/
@@ -315,6 +328,20 @@ footer .attribution a {
     width: 9.5rem;
     height: 9rem;
   }
+  main .rounded-box {
+    /*border: 1px solid white;*/
+    position: absolute;
+    bottom: -5px;
+    /*left: 0;    */
+    width: 100%;
+    height: 15px;
+    /*background: $mostly-black-blue;*/
+    /*background: green;*/
+    opacity: 1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -2;
+  }
   main .number:before,
 main .card-face-back {
     /*border: 1px solid yellow;*/
@@ -343,7 +370,7 @@ main .card-face-front {
   }
   main .time-label {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 43.6rem;
     margin-top: 1rem;
@@ -352,8 +379,17 @@ main .card-face-front {
   main .time-label > div {
     width: 9.5rem;
     text-align: center;
+    margin: 0 0.7;
     /*border: 1px solid white;*/
     /*margin: 0 1.5rem;  */
+  }
+  main .flip-time:before {
+    width: 8.5rem;
+    left: 4.5px;
+  }
+  main .flip-time:after {
+    width: 8rem;
+    left: 6.5px;
   }
 
   footer {
@@ -412,6 +448,20 @@ main .card-face-front {
     width: 10rem;
     height: 9.5rem;
   }
+  main .rounded-box {
+    /*border: 1px solid white;*/
+    position: absolute;
+    bottom: -4px;
+    /*left: 0;    */
+    width: 100%;
+    height: 15px;
+    /*background: $mostly-black-blue;*/
+    /*background: green;*/
+    opacity: 1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -2;
+  }
   main .number:before,
 main .card-face-back {
     /*border: 1px solid yellow;*/
@@ -440,17 +490,26 @@ main .card-face-front {
   }
   main .time-label {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 48rem;
     margin-top: 1rem;
-    /*border: 1px solid red;            */
+    /*border: 1px solid red;*/
   }
   main .time-label > div {
-    width: 9rem;
+    width: 10rem;
     text-align: center;
+    margin: 0 1rem;
     /*border: 1px solid white;*/
     /*margin: 0 1.5rem;  */
+  }
+  main .flip-time:before {
+    width: 8.5rem;
+    left: 5px;
+  }
+  main .flip-time:after {
+    width: 8rem;
+    left: 7px;
   }
 
   footer {
@@ -504,6 +563,20 @@ main .card-face-front {
     width: 7.5rem;
     height: 7rem;
   }
+  main .rounded-box {
+    /*border: 1px solid white;*/
+    position: absolute;
+    bottom: -3px;
+    /*left: 0;    */
+    width: 100%;
+    height: 10px;
+    /*background: $mostly-black-blue;*/
+    /*background: green;*/
+    opacity: 1;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    z-index: -2;
+  }
   main .number:before,
 main .card-face-back {
     background: #343650;
@@ -527,12 +600,21 @@ main .card-face-front {
     border-top-right-radius: 2px;
   }
   main .time-label {
-    width: 36rem;
+    width: 34rem;
     margin-top: 1rem;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   main .time-label > div {
-    width: 7rem;
+    width: 7.5rem;
+    margin: 0 0.5rem;
+  }
+  main .flip-time:before {
+    width: 6.5rem;
+    left: 3.5px;
+  }
+  main .flip-time:after {
+    width: 6.5rem;
+    left: 3.5px;
   }
 }
 /*------------------------- END MOBILE 2 330 PX -----------------------------*/

@@ -38,7 +38,7 @@ html, body {
 
 body {
                 
-    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, rgba(30,30,40,1) 0%, rgba(31, 23, 38,1) 80%);
+    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, rgba(30,34,45,1) 0%, rgba(31, 25, 40,1) 80%);
     background-position: left top, right bottom;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -337,18 +337,32 @@ footer {
         justify-content: center;
         align-items: flex-end;
         a {
+            filter: invert(63%) sepia(10%) saturate(866%) hue-rotate(199deg) brightness(83%) contrast(93%);
             display: inline-block;
             padding: 1rem;
+            &:hover {
+               filter: invert(73%) sepia(52%) saturate(5923%) hue-rotate(309deg) brightness(98%) contrast(101%);
+            } 
         }
     }
-    .attribution {
+    .attribution {        
         padding-top: 2rem;
         margin-bottom: 1rem; 
         font-size: 0.7rem; text-align: center;
+        color: $white;
+        span {
+            margin-left: 1rem;
+        }
+
         a {
+            /*border: 1px solid red;*/
             margin: 0 0.5rem;
-            color: hsl(228, 45%, 44%);
-            text-decoration: none;            
+            color: $grayish-blue;
+            /*color: hsl(228, 45%, 44%);*/
+            text-decoration: none;
+            &:hover {
+               color: $soft-red;
+            } 
         } 
     }   
 }
@@ -392,6 +406,21 @@ footer {
         .number {
             width: 9.5rem;
             height: 9rem;
+        }
+
+        .rounded-box {
+            /*border: 1px solid white;*/
+            position: absolute;
+            bottom: -5px;
+            /*left: 0;    */
+            width: 100%;
+            height: 15px;
+            /*background: $mostly-black-blue;*/
+            /*background: green;*/
+            opacity: 1;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            z-index: -2;    
         }
 
         .number:before,
@@ -439,7 +468,7 @@ footer {
 
         .time-label {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             width: 43.6rem;
             margin-top: 1rem;
@@ -448,10 +477,22 @@ footer {
             & > div {
                 width: 9.5rem;
                 text-align: center;
+                margin: 0 0.7;
                 /*border: 1px solid white;*/
                 /*margin: 0 1.5rem;  */
             }
         }
+
+        .flip-time:before {
+            width: 8.5rem;
+            left: 4.5px;
+        }
+
+        .flip-time:after{
+            width: 8rem;
+            left: 6.5px;
+        }
+
 
     }
 
@@ -519,6 +560,21 @@ footer {
             height: 9.5rem;
         }
 
+       .rounded-box {
+            /*border: 1px solid white;*/
+            position: absolute;
+            bottom: -4px;
+            /*left: 0;    */
+            width: 100%;
+            height: 15px;
+            /*background: $mostly-black-blue;*/
+            /*background: green;*/
+            opacity: 1;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            z-index: -2;    
+        }
+
         .number:before,
         .card-face-back {
             /*border: 1px solid yellow;*/
@@ -560,18 +616,29 @@ footer {
 
         .time-label {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             width: 48rem;
             margin-top: 1rem;
-            /*border: 1px solid red;            */
+            /*border: 1px solid red;*/
             
             & > div {
-                width: 9rem;
+                width: 10rem;
                 text-align: center;
+                margin: 0 1rem;
                 /*border: 1px solid white;*/
                 /*margin: 0 1.5rem;  */
             }
+        }
+
+        .flip-time:before {
+            width: 8.5rem;
+            left: 5px;            
+        }
+
+        .flip-time:after{
+            width: 8rem;
+            left: 7px;            
         }
 
     }
@@ -638,6 +705,21 @@ footer {
                 height: 7rem;
             }
 
+            .rounded-box {
+            /*border: 1px solid white;*/
+                position: absolute;
+                bottom: -3px;
+                /*left: 0;    */
+                width: 100%;
+                height: 10px;
+                /*background: $mostly-black-blue;*/
+                /*background: green;*/
+                opacity: 1;
+                border-bottom-left-radius: 2px;
+                border-bottom-right-radius: 2px;
+            z-index: -2;    
+            }
+
             .number:before,
             .card-face-back {                
                 background: $dark-desat-blue;
@@ -674,12 +756,24 @@ footer {
             }
 
             .time-label {           
-                width: 36rem;
+                width: 34rem;
                 margin-top: 1rem;
-                justify-content: space-evenly;            
+                justify-content: center;            
                 & > div {
-                    width: 7rem;                    
+                    width: 7.5rem;
+                    margin: 0 0.5rem;                    
                 }
+            }
+
+            .flip-time:before {
+                width: 6.5rem;
+                left: 3.5px;
+                         
+            }
+
+            .flip-time:after{
+                width: 6.5rem;
+                left: 3.5px;                            
             }
 
         }
