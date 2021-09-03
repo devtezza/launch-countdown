@@ -5,7 +5,7 @@
     d: initElements('d'),
   }
 
-  let flag = []
+  let expired = []
 
   function initElements(type) {
        
@@ -33,7 +33,7 @@
 
 
 function runCountdown() {
-    console.log(flag)
+    console.log(expired)
     if (!document.hidden) {
         const date = new Date("December 02, 2021 20:50:00").getTime()    
         const now = new Date().getTime()                
@@ -83,28 +83,28 @@ function runCountdown() {
           if (t === 'd') {            
                 if (next < 0 ) { 
                     next = '00'
-                    flag[0] = true
+                    expired[0] = true
                 } else if (next < 10) {
                     next = `0${next}`
                 }
           }
           if (t === 'h') {
                 if (next < 0) {
-                    if (flag[0]) {
-                        flag[1] = true
+                    if (expired[0]) {
+                        expired[1] = true
                         next = '00'
                     } else {
                         next = '23'
                     }
-                    flag ? next = '00' : next = '23'
+                    expired ? next = '00' : next = '23'
                 } else if (next < 10) {
                     next = `0${next}`
                 } 
           }
           if (t === 'm') {           
                 if (next < 0 ) {
-                    if (flag[1]) {
-                        flag[2] = true
+                    if (expired[1]) {
+                        expired[2] = true
                         next = '00'                        
                     } else {
                         next = '59'
@@ -116,8 +116,8 @@ function runCountdown() {
           }
           if (t === 's') {            
                 if (next < 0 ) { 
-                    if (flag[2]) {
-                        flag[3] = true
+                    if (expired[2]) {
+                        expired[3] = true
                         next = '00'                      
                         
                     }  else {

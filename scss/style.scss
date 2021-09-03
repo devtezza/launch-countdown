@@ -67,6 +67,7 @@ h2 {
         color: $grayish-blue;
 } 
 
+
 /*------------------------ HEADER ---------------------------------*/
 header {
     display: flex;
@@ -84,7 +85,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;   
-    
+}    
     
         .flip-time-container {        
 
@@ -205,19 +206,20 @@ main {
         .card-face-back {
             background: $dark-desat-blue;
             color: $soft-red;
+            background-size: 50% 50% !important;
+            background-repeat: no-repeat !important;
         }
 
         .number:before,
         .card-face-back {
+            /*border: 1px solid red;*/
             background: $dark-desat-blue;
             background: 
                 radial-gradient(circle at top left, $mostly-black-blue 6px, $dark-desat-blue 0),
                 radial-gradient(circle at top right, $mostly-black-blue 6px, $dark-desat-blue 0) top right,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
+            
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-bottom-left-radius: 10px;
@@ -227,17 +229,16 @@ main {
 
         .number:after,
         .card-face-front {
+            /*border: 1px solid green;*/
             background: $dark-desat-blue;
             background: 
                 radial-gradient(circle at bottom left, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom left,
                 radial-gradient(circle at bottom right, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom right,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
+            
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;  
         }
@@ -286,7 +287,7 @@ main {
             }
         }
 
-}
+
 
 /*------------------------ FOOTER ---------------------------------*/
 footer {    
@@ -354,6 +355,7 @@ footer {
    
     main {
         height: 30vh;
+    }    
         .flip-time-container {
             font-size: 5rem;
         }
@@ -368,15 +370,11 @@ footer {
             height: 9rem;
         }
 
-        .card-shadow {           
-            position: absolute;
+        .card-shadow { 
             bottom: -5px;
-            width: 100%;
             height: 15px;
-            opacity: 1;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            z-index: -2;    
         }
 
         .number:before,
@@ -387,15 +385,9 @@ footer {
                 radial-gradient(circle at top right, $mostly-black-blue 3.5px, $dark-desat-blue 0) top right,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
+            
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-           
-            
         }
 
 
@@ -407,15 +399,9 @@ footer {
                 radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
+            
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-           
-            
         }
 
         .flip-time-label {
@@ -443,7 +429,7 @@ footer {
         }
 
 
-    }
+    
 
    footer {
         height: 33vh;
@@ -491,8 +477,7 @@ footer {
         align-items: flex-end;
     }
    
-    main {
-        height: 30vh;
+        
         .flip-time-container {
             font-size: 5rem;
         }
@@ -507,15 +492,8 @@ footer {
             height: 9.5rem;
         }
 
-       .card-shadow {
-            position: absolute;
-            bottom: -4px;
-            width: 100%;
-            height: 15px;
-            opacity: 1;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            z-index: -2;    
+       .card-shadow {            
+            bottom: -4px;                        
         }
 
         .number:before,
@@ -526,13 +504,9 @@ footer {
                 radial-gradient(circle at top right, $mostly-black-blue 3.5px, $dark-desat-blue 0) top right,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
                 linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
         }
 
 
@@ -544,13 +518,9 @@ footer {
                 radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
                 linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+           
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
         }
 
         .flip-time-label {
@@ -578,7 +548,7 @@ footer {
             left: 7px;            
         }
 
-    }
+    
 
    footer {
         height: 33vh;
@@ -624,8 +594,7 @@ footer {
             align-items: flex-end;
         }
        
-        main {
-            height: 30vh;
+                    
             .flip-time-container {
                 font-size: 3rem;
             }
@@ -639,15 +608,11 @@ footer {
                 height: 7rem;
             }
 
-            .card-shadow {
-                position: absolute;
-                bottom: -3px;
-                width: 100%;
-                height: 10px;
-                opacity: 1;
+            .card-shadow {                
+                bottom: -3px;                
+                height: 10px;                
                 border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
-            z-index: -2;    
+                border-bottom-right-radius: 2px;            
             }
 
             .number:before,
@@ -657,12 +622,8 @@ footer {
                     radial-gradient(circle at top left, $mostly-black-blue 1.5px, $dark-desat-blue 0),
                     radial-gradient(circle at top right, $mostly-black-blue 1.5px, $dark-desat-blue 0) top right,
                     linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
-                    linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
+                    linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;                
                 
-                background-size: 50% 50%;
-                background-repeat: no-repeat;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
                 border-bottom-left-radius: 2px;
                 border-bottom-right-radius: 2px;
             }
@@ -676,11 +637,7 @@ footer {
                     radial-gradient(circle at bottom right, $mostly-black-blue 1.5px, $dark-desat-blue-2 0) bottom right,
                     linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
                     linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-
-                background-size: 50% 50%;
-                background-repeat: no-repeat;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
+                
                 border-top-left-radius: 2px;
                 border-top-right-radius: 2px; 
             }
@@ -706,7 +663,7 @@ footer {
                 left: 3.5px;                            
             }
 
-        }
+        
 }
 
 /*------------------------- END MOBILE 2 330 PX -----------------------------*/
