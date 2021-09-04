@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+/*FONTS*/
+$font: 'Red Hat Text', sans-serif; 
+
+
+/*PRIMARY COLORS*/
+/*Grayish blue: */    
+$grayish-blue: hsl(237, 18%, 59%);
+/*Soft red: */
+$soft-red: hsl(345, 95%, 68%);
+
+/*NEUTRAL COLORS*/
+/*White: */
+$white: hsl(0, 0%, 100%);
+/*Dark desaturated blue: */
+$dark-desat-blue: hsl(236, 21%, 26%);
+/*Dark desaturated blue 2: */
+$dark-desat-blue-2: hsl(236, 22%, 24%);
+/*Very dark blue: */
+$very-dark-blue: hsl(235, 16%, 14%);
+/*Very dark (mostly black) blue: */
+$mostly-black-blue: hsl(234, 17%, 12%);
+/*Background gradient 1: */
+$back-gradient-1: hsl(224, 20%, 15%);
+/*Background gradient 2: */
+$back-gradient-2: hsl(264, 23%, 13%);

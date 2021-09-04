@@ -1,0 +1,43 @@
+.number:before,
+.card-face-back, 
+.number:after,
+.card-face-front {
+    background: $dark-desat-blue;
+    color: $soft-red;
+    background-size: 50% 50% !important;
+    background-repeat: no-repeat !important;
+}
+
+
+@mixin cardStyles($radial-grad, $linear-grad, $border-radius) {
+   
+        .number:before,
+        .card-face-back {                      
+            background: 
+                radial-gradient(circle at top left, $mostly-black-blue $radial-grad, $dark-desat-blue 0),
+                radial-gradient(circle at top right, $mostly-black-blue $radial-grad, $dark-desat-blue 0) top right,
+                linear-gradient(45deg, $dark-desat-blue $linear-grad, $dark-desat-blue 0) bottom left,
+                linear-gradient(45deg, $dark-desat-blue $linear-grad, $dark-desat-blue 0) bottom right;            
+            
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: $border-radius;
+            border-bottom-right-radius: $border-radius; 
+        }
+
+
+        .number:after,
+        .card-face-front {           
+            background: 
+                radial-gradient(circle at bottom left, $mostly-black-blue $radial-grad, $dark-desat-blue-2 0) bottom left,
+                radial-gradient(circle at bottom right, $mostly-black-blue $radial-grad, $dark-desat-blue-2 0) bottom right,
+                linear-gradient(45deg, $dark-desat-blue-2 $linear-grad, $dark-desat-blue-2 0) top left,
+                linear-gradient(45deg, $dark-desat-blue-2 $linear-grad, $dark-desat-blue-2 0) top right;
+            
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;  
+        }
+
+}
