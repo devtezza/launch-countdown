@@ -1,27 +1,6 @@
 /*------------------------ GLOBAL STYLES---------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
-
-/*PRIMARY COLORS*/
-/*Grayish blue: */    
-$grayish-blue: hsl(237, 18%, 59%);
-/*Soft red: */
-$soft-red: hsl(345, 95%, 68%);
-
-/*NEUTRAL COLORS*/
-/*White: */
-$white: hsl(0, 0%, 100%);
-/*Dark desaturated blue: */
-$dark-desat-blue: hsl(236, 21%, 26%);
-/*Dark desaturated blue 2: */
-$dark-desat-blue-2: hsl(236, 22%, 24%);
-/*Very dark blue: */
-$very-dark-blue: hsl(235, 16%, 14%);
-/*Very dark (mostly black) blue: */
-$mostly-black-blue: hsl(234, 17%, 12%);
-/*Background gradient 1: */
-$back-gradient-1: hsl(224, 20%, 15%);
-/*Background gradient 2: */
-$back-gradient-2: hsl(264, 23%, 13%);
+@import './variables';
+@import './card-styles';
 
 html, body {  
     max-width: 1440px;
@@ -40,7 +19,7 @@ body {
     background-position: left top, right bottom;
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Red Hat Text', sans-serif; 
+    font-family: $font;
         }
 
 img {
@@ -200,48 +179,8 @@ main {
             transform: rotateX(-180deg);
         }
 
-        .number:before,
-        .number:after,
-        .card-face-front,
-        .card-face-back {
-            background: $dark-desat-blue;
-            color: $soft-red;
-            background-size: 50% 50% !important;
-            background-repeat: no-repeat !important;
-        }
-
-        .number:before,
-        .card-face-back {
-            /*border: 1px solid red;*/
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at top left, $mostly-black-blue 6px, $dark-desat-blue 0),
-                radial-gradient(circle at top right, $mostly-black-blue 6px, $dark-desat-blue 0) top right,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-            
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px; 
-        }
-
-
-        .number:after,
-        .card-face-front {
-            /*border: 1px solid green;*/
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 6px, $dark-desat-blue-2 0) bottom right,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-            
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;  
-        }
+        /*Set specific styles to the cards: inverted borders effect, rounded borders*/
+        @include cardStyles(6px, 20px, 10px);       
 
 
         .flip-time:before {
@@ -377,32 +316,7 @@ footer {
             border-bottom-right-radius: 5px;
         }
 
-        .number:before,
-        .card-face-back {
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at top left, $mostly-black-blue 3.5px, $dark-desat-blue 0),
-                radial-gradient(circle at top right, $mostly-black-blue 3.5px, $dark-desat-blue 0) top right,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-            
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-
-
-        .number:after,
-        .card-face-front {
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-            
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
+        @include cardStyles(3.5px, 15px, 5px);        
 
         .flip-time-label {
             display: flex;
@@ -496,32 +410,7 @@ footer {
             bottom: -4px;                        
         }
 
-        .number:before,
-        .card-face-back {
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at top left, $mostly-black-blue 3.5px, $dark-desat-blue 0),
-                radial-gradient(circle at top right, $mostly-black-blue 3.5px, $dark-desat-blue 0) top right,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
-                linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;
-            
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-
-
-        .number:after,
-        .card-face-front {
-            background: $dark-desat-blue;
-            background: 
-                radial-gradient(circle at bottom left, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom left,
-                radial-gradient(circle at bottom right, $mostly-black-blue 3.5px, $dark-desat-blue-2 0) bottom right,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
-                linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-           
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-        }
+        @include cardStyles(2.5px, 12px, 4px);        
 
         .flip-time-label {
             display: flex;
@@ -615,32 +504,7 @@ footer {
                 border-bottom-right-radius: 2px;            
             }
 
-            .number:before,
-            .card-face-back {                
-                background: $dark-desat-blue;
-                background: 
-                    radial-gradient(circle at top left, $mostly-black-blue 1.5px, $dark-desat-blue 0),
-                    radial-gradient(circle at top right, $mostly-black-blue 1.5px, $dark-desat-blue 0) top right,
-                    linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom left,
-                    linear-gradient(45deg, $dark-desat-blue 20px, $dark-desat-blue 0) bottom right;                
-                
-                border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
-            }
-
-
-            .number:after,
-            .card-face-front {                
-                background: $dark-desat-blue;
-                background: 
-                    radial-gradient(circle at bottom left, $mostly-black-blue 1.5px, $dark-desat-blue-2 0) bottom left,
-                    radial-gradient(circle at bottom right, $mostly-black-blue 1.5px, $dark-desat-blue-2 0) bottom right,
-                    linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top left,
-                    linear-gradient(45deg, $dark-desat-blue-2 20px, $dark-desat-blue-2 0) top right;
-                
-                border-top-left-radius: 2px;
-                border-top-right-radius: 2px; 
-            }
+            @include cardStyles(1.5px, 10px, 2px);           
 
             .flip-time-label {           
                 width: 34rem;
