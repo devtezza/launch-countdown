@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/sass-flexbox-javascript-61k69qKFU)
-- Live Site URL: [Add live site URL here](https://nandotezza.github.io/launch-countdown/)
+- Solution URL: (https://www.frontendmentor.io/solutions/sass-flexbox-javascript-61k69qKFU)
+- Live Site URL: (https://nandotezza.github.io/launch-countdown/)
 
 ## My process
 
