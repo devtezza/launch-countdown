@@ -7,13 +7,18 @@ html, body {
     min-width: 250px;        
     padding: 0;
     font-size: 14px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: 100vh;    
     margin: 0 auto
 
 }
 
 body {
+                
+    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), -o-linear-gradient(top, $back-gradient-1 0%, $back-gradient-2 80%);
+                
+    background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), -webkit-gradient(linear, left top, left bottom, from($back-gradient-1), color-stop(80%, $back-gradient-2));
                 
     background-image: url('../images/bg-stars.svg'),  url('../images/pattern-hills.svg'), linear-gradient(to bottom, $back-gradient-1 0%, $back-gradient-2 80%);
     background-position: left top, right bottom;
@@ -35,24 +40,31 @@ header, main {
         text-align: center;
         text-transform: uppercase;
         font-size: 1.5rem;
-        letter-spacing: 0.6rem;        
+        letter-spacing: 0.6rem;               
     }   
 
-h2 {
+h2 {    
         text-align: center;
         text-transform: uppercase;
         font-size: 1rem;        
         letter-spacing: 0.4rem;
-        color: $grayish-blue;
+        color: $grayish-blue;        
 } 
 
 
 /*------------------------ HEADER ---------------------------------*/
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;   
-    box-sizing: border-box;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;   
+    -webkit-box-sizing: border-box;   
+            box-sizing: border-box;
     height: 32vh;   
 }
 
@@ -60,17 +72,34 @@ header {
 
 main {
     height: 43vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;   
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;   
 }    
     
         .flip-time-container {        
 
+        display: -webkit-box;        
+
+        display: -ms-flexbox;        
+
         display: flex;
-        justify-content: center;
-        align-items:  center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align:  center;
+            -ms-flex-align:  center;
+                align-items:  center;
         
         font-family: 'Red Hat Text', sans-serif;
         font-size: 5.5rem;
@@ -79,13 +108,19 @@ main {
         }
 
         .flip-time-container * {
-            user-select: none;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
             cursor: default;
         }
 
         .flip-time {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            perspective: 500px;
+            -webkit-perspective: 500px;
+                    perspective: 500px;
             margin: 0 1.4rem;            
         }
 
@@ -100,8 +135,14 @@ main {
             position: absolute;
             z-index: 0;
 
+            display: -webkit-box;
+
+            display: -ms-flexbox;
+
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
 
             width: 100%;
             height: 50%;
@@ -112,14 +153,18 @@ main {
             content: attr(data-number-before);
             
             bottom: 0;
-            align-items: flex-start;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
         }
 
         .number:after {            
             content: attr(data-number-after); 
 
             top: 0;
-            align-items: flex-end;   
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;   
         }
 
 
@@ -143,15 +188,21 @@ main {
             width: 100%;
             height: 50%;
 
-            transform-style: preserve-3d;
-            transform-origin: bottom;
-            transform: rotateX(0);
+            -webkit-transform-style: preserve-3d;
 
-            transition: transform .7s ease-in-out;    
+                    transform-style: preserve-3d;
+            -webkit-transform-origin: bottom;
+                -ms-transform-origin: bottom;
+                    transform-origin: bottom;
+            -webkit-transform: rotateX(0);
+                    transform: rotateX(0);
+
+            -webkit-transition: -webkit-transform .7s ease-in-out;transition: -webkit-transform .7s ease-in-out;-o-transition: transform .7s ease-in-out;transition: transform .7s ease-in-out;transition: transform .7s ease-in-out, -webkit-transform .7s ease-in-out;   
         }
 
         .card.flipped {
-            transform: rotateX(-180deg);
+            -webkit-transform: rotateX(-180deg);
+                    transform: rotateX(-180deg);
         }
 
 
@@ -159,28 +210,41 @@ main {
         .card-face {            
             position: absolute;
 
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
 
             width: 100%;
             height: 100%;
             overflow: hidden;
 
-            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+
+                    backface-visibility: hidden;
         }
 
         .card-face-front {           
-            align-items: flex-end;
+            -webkit-box-align: end;           
+                -ms-flex-align: end;           
+                    align-items: flex-end;
         }
 
         .card-face-back {
-            align-items: flex-start;
+            -webkit-box-align: start;
+                -ms-flex-align: start;
+                    align-items: flex-start;
             
-            transform: rotateX(-180deg);
+            -webkit-transform: rotateX(-180deg);
+            
+                    transform: rotateX(-180deg);
         }
 
         /*Set specific styles to the cards: inverted borders effect, rounded borders*/
-        @include cardStyles(6px, 20px, 10px);       
+        @include cardStyles(6px, 20px, 10px);
 
 
         .flip-time:before {
@@ -193,7 +257,8 @@ main {
             top: 49%;
             z-index: 2;
             opacity: 0.1;
-            box-shadow: 0 -0.1px 1px 0.1px black;
+            -webkit-box-shadow: 0 -0.1px 1px 0.1px black;
+                    box-shadow: 0 -0.1px 1px 0.1px black;
         }
 
         .flip-time:after{            
@@ -207,15 +272,23 @@ main {
             z-index: 2;
             opacity: 0.2;
             
-            box-shadow: 0 1px 2.5px 0.1px $grayish-blue;
+            -webkit-box-shadow: 0 1px 2.5px 0.1px $grayish-blue;
+            
+                    box-shadow: 0 1px 2.5px 0.1px $grayish-blue;
         }
 
 
 
         .flip-time-label {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: 53.2rem;
             margin-top: 1rem;            
             
@@ -231,19 +304,34 @@ main {
 /*------------------------ FOOTER ---------------------------------*/
 footer {    
     height: 25vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     .social-icons {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
         a {
-            filter: invert(63%) sepia(10%) saturate(866%) hue-rotate(199deg) brightness(83%) contrast(93%);
+            -webkit-filter: invert(63%) sepia(10%) saturate(866%) hue-rotate(199deg) brightness(83%) contrast(93%);
+                    filter: invert(63%) sepia(10%) saturate(866%) hue-rotate(199deg) brightness(83%) contrast(93%);
             display: inline-block;
             padding: 1rem;
             &:hover {
-               filter: invert(73%) sepia(52%) saturate(5923%) hue-rotate(309deg) brightness(98%) contrast(101%);
+               -webkit-filter: invert(73%) sepia(52%) saturate(5923%) hue-rotate(309deg) brightness(98%) contrast(101%);
+                       filter: invert(73%) sepia(52%) saturate(5923%) hue-rotate(309deg) brightness(98%) contrast(101%);
             } 
         }
     }
@@ -289,7 +377,9 @@ footer {
 
     header {
         height: 37vh;
-        align-items: flex-end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
     }
    
     main {
@@ -301,7 +391,8 @@ footer {
 
         .flip-time {
             margin: 0 0.7rem;
-            perspective: 250px;
+            -webkit-perspective: 250px;
+                    perspective: 250px;
         }
 
         .number {
@@ -319,9 +410,15 @@ footer {
         @include cardStyles(3.5px, 15px, 5px);        
 
         .flip-time-label {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: 43.6rem;
             margin-top: 1rem;            
             
@@ -347,7 +444,9 @@ footer {
 
    footer {
         height: 33vh;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
 
         .social-icons {
             margin: 20rem 0 2rem 0;
@@ -388,7 +487,9 @@ footer {
 
     header {
         height: 37vh;
-        align-items: flex-end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
     }
    
         
@@ -398,7 +499,8 @@ footer {
 
         .flip-time {
             margin: 0 1rem;
-            perspective: 150px;
+            -webkit-perspective: 150px;
+                    perspective: 150px;
         }
 
         .number {
@@ -413,12 +515,17 @@ footer {
         @include cardStyles(2.5px, 12px, 4px);        
 
         .flip-time-label {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: 48rem;
-            margin-top: 1rem;
-            /*border: 1px solid red;*/
+            margin-top: 1rem;           
             
             & > div {
                 width: 10rem;
@@ -441,7 +548,9 @@ footer {
 
    footer {
         height: 33vh;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
 
         .social-icons {
             margin: 20rem 0 2rem 0;
@@ -480,7 +589,9 @@ footer {
 
         header {
             height: 37vh;
-            align-items: flex-end;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
         }
        
                     
@@ -509,7 +620,9 @@ footer {
             .flip-time-label {           
                 width: 34rem;
                 margin-top: 1rem;
-                justify-content: center;            
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;            
                 & > div {
                     width: 7.5rem;
                     margin: 0 0.5rem;                    

@@ -35,7 +35,7 @@
 function runCountdown() {
     console.log(expired)
     if (!document.hidden) {
-        const date = new Date("December 02, 2021 20:50:00").getTime()    
+        const date = new Date("December 12, 2021 20:50:00").getTime()    
         const now = new Date().getTime()                
         const difference = date - now
 
