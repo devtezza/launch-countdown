@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://www.frontendmentor.io/solutions/sass-flexbox-javascript-61k69qKFU)
-- [Live Site URL](https://nandotezza.github.io/launch-countdown/)
+- [Live Site URL](https://devtezza.github.io/launch-countdown/)
 
 ## My process
 
@@ -46,7 +46,7 @@ Users should be able to:
 
 ## Author
 - Author name - Fernando Tezza
-- Frontend Mentor - [@nandotezza](https://www.frontendmentor.io/profile/nandotezza)
+- Frontend Mentor - [@devtezza](https://www.frontendmentor.io/profile/devtezza)
 
 ## Acknowledgments
 
