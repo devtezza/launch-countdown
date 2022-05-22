@@ -45,7 +45,7 @@ Users should be able to:
 - [flip-clock](https://github.com/1isten/flip-clock) - This repository helped me to get a hint on how to create animated flip cards and how to add a countdown to it. I just adapted the code to fit my needs on this challenge.
 
 ## Author
-- Author name - Fernando Tezza
+- Website - [Fernando Tezza](https://www.devtezza.com/)
 - Frontend Mentor - [@devtezza](https://www.frontendmentor.io/profile/devtezza)
 
 ## Acknowledgments
